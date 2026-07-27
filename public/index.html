@@ -1,0 +1,34 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Multiplayer Fighter (Prototype)</title>
+  <style>
+    body { margin: 0; font-family: sans-serif; background: #111; color: #eee; }
+    #game-container { width: 800px; margin: 16px auto; }
+    #hud { width: 800px; margin: 8px auto; display:flex; justify-content:space-between; }
+    .health { width: 48%; background: #333; padding:8px; border-radius:6px; }
+    .bar { height:18px; background:#b71c1c; border-radius:4px; }
+    #status { text-align:center; margin-top:8px }
+    #instructions { width:800px; margin:12px auto; font-size:14px; color:#ccc }
+  </style>
+</head>
+<body>
+  <div id="game-container"></div>
+  <div id="hud">
+    <div class="health"><strong>You</strong><div id="myBar" class="bar" style="width:100%"></div></div>
+    <div class="health"><strong>Opponent</strong><div id="oppBar" class="bar" style="width:100%"></div></div>
+  </div>
+  <div id="status">Connecting...</div>
+  <div id="instructions">
+    Controls (per device): Move: A/D (or Arrow Left/Right). Jump: W (or Arrow Up). Attack: F (or "/").
+    <br>To play over LAN: run the server and open the game URL on both devices (use host's LAN IP:3000).
+    <br>To play on same machine: open two browser windows and connect both to http://localhost:3000
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/phaser@3.60.0/dist/phaser.min.js"></script>
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="game.js"></script>
+</body>
+</html>
